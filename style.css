@@ -43,6 +43,7 @@ nav .circle{
     border-radius: 50%;
     border: 8px solid #fff;
     box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
+    animation: rotate 40s linear infinite;
 }
 
 .music-player h1{
@@ -101,4 +102,19 @@ nav .circle{
     transform: scale(1.5);
     background: #FFCCCC;
     color: white;
+}
+
+/* rotate image like disk */
+
+.rotate {
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
