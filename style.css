@@ -43,7 +43,7 @@ nav .circle{
     border-radius: 50%;
     border: 8px solid #fff;
     box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
-    animation: rotate 40s linear infinite;
+    animation: rotate 50s linear infinite;
 }
 
 .music-player h1{

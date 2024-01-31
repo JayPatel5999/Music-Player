@@ -8,17 +8,19 @@ song.onloadedmetadata = function() {
 }
 
 function playPause(){
+    let songImg = document.querySelector('.song-img');
+
     if(ctrlIcon.classList.contains("fa-pause")){
         song.pause();
         ctrlIcon.classList.remove("fa-pause");
         ctrlIcon.classList.add("fa-play");
-        document.querySelector('.song-img').classList.remove('rotate');
+        songImg.style.animationPlayState = 'paused';
     }
     else{
         song.play();
         ctrlIcon.classList.remove("fa-play");
         ctrlIcon.classList.add("fa-pause");
-        document.querySelector('.song-img').classList.add('rotate');
+        songImg.style.animationPlayState = 'running';
     }
 }
 
@@ -39,9 +41,10 @@ progress.onchange = function () {
 // Rotate the image when the song is playing
 
 const songImg = document.querySelector('.song-img');
+songImg.style.animationPlayState = 'paused';
 
 songImg.addEventListener('animationiteration', () => {
-  if (!song.paused) {
-    songImg.style.animationPlayState = 'running';
+  if (song.paused) {
+    songImg.style.animationPlayState = 'paused';
   }
 });
